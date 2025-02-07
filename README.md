@@ -26,11 +26,11 @@ This project is a Streamlit-based interactive dashboard for visualizing student 
 
 1. Clone this repository:
    ```bash
-   git clone <https://github.com/Odhiambogeorge310/School_Dashboard.git>
+   git clone https://github.com/Odhiambogeorge310/School_Dashboard.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd <school_app>
+   cd school_app
    ```
 3. Install dependencies:
    ```bash
@@ -61,6 +61,6 @@ This project is for educational purposes only.
 
 ## Author
 
-GEORGE ODHIAMBO
+GEORGE ODHIAMBO (Data Scientist)
 
 
