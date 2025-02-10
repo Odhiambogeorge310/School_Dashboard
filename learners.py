@@ -46,7 +46,10 @@ if df_select.empty:
 #.......................................................................................................................
 #main page title
 st.title("🎓IMMACULATE_SCHOOL_DASHBOARD")
-st.markdown("##")
+st.markdown('<style>h1{padding-top:2rem;}</style>', unsafe_allow_html=True)
+
+#st.markdown('<style>div.block-container{padding-top:1rem;}</style>',unsafe_allow_html=True)
+
 
 
 
@@ -82,7 +85,7 @@ st.divider()
 #second_partition
 #............................................................................................................................
 #citizenship sidebar
-citizenship = st.sidebar.radio('Choose Citizenship:', options = data['CITIZENSHIP'].unique())
+citizenship = st.sidebar.radio('Filter Citizenship:', options = data['CITIZENSHIP'].unique())
 df_select = data.query(
     "CITIZENSHIP == @citizenship"
 )
@@ -94,7 +97,7 @@ foreigner = df_select.loc[df_select['CITIZENSHIP'] == 'FOREIGNER'].count()[0]
 #general Distribution
 Girl = df_select.loc[df_select['GENDER'] == 'Girl'].count()[0]
 Boy = df_select.loc[df_select['GENDER'] == 'Boy'].count()[0]
-#color=['#eb34c0',"#4b5beb"]
+color=['#eb34c0',"#4b5beb"]
 data = {'Gender': ['Boy', 'Girl'],
         'Count': [Boy, Girl]}  
 
@@ -102,7 +105,7 @@ data = {'Gender': ['Boy', 'Girl'],
 gender = pd.DataFrame(data)
 
 # Create a pie chart using plotly express
-fig = px.pie(gender, names='Gender', values='Count', title='General_Distribution')
+fig = px.pie(gender, names='Gender', values='Count', title='General_Distribution',hole = 0.5)
 
 fig.update_layout(
     plot_bgcolor="rgba(0,0,0,0)",
@@ -134,18 +137,18 @@ df_select = df_select.query(
 gender_count=df_select['GENDER'].value_counts().reset_index()
 gender_count.columns = ['GENDER', 'count']
 # Define a custom color sequence
-color_sequence = ["#eb34c0","#4b5beb"]
-labels = ['BOYS','GIRLS']
+color_sequence = ["#4b5beb","#eb34c0"]
+labels = ['GIRLS','BOYS']
 
 pie = px.pie(gender_count, values='count', names='GENDER',color='GENDER', labels=labels, title="Distribution_Per_Grades",
              color_discrete_sequence=color_sequence)
 #st.plotly_chart(pie)
 
 #Histogram
-#color = ["#4b5beb","#eb34c0"]
+#color = ["#4b5beb","#eb34c0" "#eb34c0"]
 custom_colors = {
-    'Boys': 'blue',   # Color for boy
-    'Girl': 'pink'  # Color for girl
+    'Boy': '#4b5beb',   # Color for boy
+    'Girl': '#eb34c0'  # Color for girl
 }
 
 
