@@ -5,7 +5,7 @@ import streamlit as st
 import plotly.express as px
 #import matplotlib.pyplot as plt
 
-#st.set_page_config(page_title="IMACULATE_SCHOOL_DASHBOARD", page_icon=":mechanical_arm:", layout="wide")
+st.set_page_config(page_title="Immaculate_School", page_icon=":school:", layout="wide")
 #....................................................................................................
 # loading dataset
 @st.cache_data
@@ -160,6 +160,19 @@ middle_column.plotly_chart(fig, use_container_width=True)
 right_column.plotly_chart(bar, use_container_width=True)
 #......................................................................................................................................................................
 st.divider()
+
+# Set custom CSS for background color
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #f0f0f0;  # Change to your desired color
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
 #creating dataframe
 st.dataframe(df_select)
