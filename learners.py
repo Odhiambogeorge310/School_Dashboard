@@ -156,7 +156,7 @@ bar=px.histogram(df_select, x='GENDER', title='Hist_Gender_Distribution', color=
 #st.plotly_chart(bar)
 
 
-
+#Assigning the kpis to splitted segments
 left_column, middle_column,right_column=st.columns(3)
 left_column.plotly_chart(pie, use_container_width=True)
 middle_column.plotly_chart(fig, use_container_width=True)
