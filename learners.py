@@ -5,7 +5,7 @@ import streamlit as st
 import plotly.express as px
 #import matplotlib.pyplot as plt
 
-st.set_page_config(page_title="Immaculate_School", page_icon=":school:", layout="wide")
+st.set_page_config(page_title="Immaculate_Catholic_School", page_icon=":school:", layout="wide")
 #....................................................................................................
 # loading dataset
 @st.cache_data
@@ -45,7 +45,7 @@ if df_select.empty:
 
 #.......................................................................................................................
 #main page title
-st.title("🎓IMMACULATE_SCHOOL_DASHBOARD")
+st.title("🎓IMMACULATE_CATHOLIC_SCHOOL_DASHBOARD")
 st.markdown('<style>h1{padding-top:2rem;}</style>', unsafe_allow_html=True)
 
 #st.markdown('<style>div.block-container{padding-top:1rem;}</style>',unsafe_allow_html=True)
